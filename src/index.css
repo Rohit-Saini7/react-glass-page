@@ -1,5 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--font-color);
+  background-color: var(--background-color);
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+
+.dark {
+  --background-color: #242424;
+  --border-bottom-color: rgba(255, 255, 255, 0.2);
+  --container-bg-color: rgba(255, 255, 255, 0.1);
+  --error-color: #f8254b;
+  --font-color: rgba(255, 255, 255, 0.7);
+  --hover-color: rgba(255, 255, 255, 0.1);
+  --hover-font-color: rgb(255, 255, 255);
+  --instructions-color: rgb(0, 128, 0, 0.4);
+  --label-color: #8f8f8f;
+  --shadow: -11px 11px 22px #161616, 11px -11px 22px #323232;
+  --signin-bg-color: #28292d;
+  --signin-color: #45f3ff;
+  --table-header-color: rgba(69, 243, 255, 0.7);
+  --table-body-color: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  --background-color: #fafafa;
+  --border-bottom-color: rgba(0, 0, 0, 0.2);
+  --container-bg-color: linear-gradient(225deg, #e6e6e6, #ffffff);
+  --error-color: #f8254b;
+  --font-color: rgba(0, 0, 0, 0.7);
+  --hover-color: rgba(0, 0, 0, 0.1);
+  --hover-font-color: rgb(0, 0, 0);
+  --instructions-color: rgb(0, 128, 0, 0.4);
+  --label-color: #8f8f8f;
+  --shadow: -11px 11px 22px #bababa, 11px -11px 22px #ffffff;
+  --signin-bg-color: linear-gradient(225deg, #e6e6e6, #ffffff);
+  --signin-color: #5ae09e;
+  --table-header-color: rgba(90, 224, 158, 0.7);
+  --table-body-color: rgba(0, 0, 0, 0.1);
 }
