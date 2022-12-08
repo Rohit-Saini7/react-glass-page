@@ -56,9 +56,8 @@ const NotificationWrapper = styled.div`
   padding-left: ${({ icon, loading }) =>
     !!icon || !!loading ? '10px' : '22px'};
   border-radius: ${({ radius }) => radius}px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(3, 65, 251, 0.2);
   border: 1px solid #aaa;
-  color: #fff;
 
   &::before {
     content: '';
@@ -85,7 +84,6 @@ const Icon = styled.div`
   flex: none;
   align-items: center;
   justify-content: center;
-  color: white;
   margin-right: 16px;
   background-color: #228be6;
 `;
@@ -133,11 +131,9 @@ const Heading = styled.div`
   margin-bottom: 2px;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #fff;
 `;
 
 const Description = styled.div`
-  color: #ccc;
   line-height: 1.4;
   font-size: 0.9rem;
   overflow: hidden;

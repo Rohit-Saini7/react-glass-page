@@ -11,7 +11,7 @@ export const Progress = ({
   animate = false,
   label = '',
   'aria-label': ariaLabel,
-  sections = [],
+  sections,
   ...others
 }) => {
   function getCumulativeSections(sections) {
@@ -83,7 +83,7 @@ export const Progress = ({
 const ProgressBar = styled.div`
   position: relative;
   overflow: hidden;
-
+  width: 100%;
   //changes
   ${({ color, height, radius, striped, animate }) => `
     background-color: ${color};
@@ -114,6 +114,7 @@ const Bar = styled.div`
   position: absolute;
   top: 0;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -2,18 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import styled from 'styled-components';
 import { componentList } from '../assets/componentList';
-
-import {
-  Alert,
-  Avatar,
-  Badge,
-  Burger,
-  Notification,
-  Overlay,
-  Progress,
-  RingProgress,
-  Skeleton,
-} from './../react-glassmorphism';
+import { GetDemoComponent } from '../components/DemoComponent';
 
 export async function loader({ params }) {
   const component = componentList.find(
@@ -52,8 +41,7 @@ const Showcase = () => {
         </PropsWrapper>
       </LeftSection>
       <RightSection>
-        <DemoWrapper /* dangerouslySetInnerHTML={{ __html: demoComponent }} */
-        ></DemoWrapper>
+        <DemoWrapper>{GetDemoComponent(name)}</DemoWrapper>
         <CodeContainer>
           Code:
           <CodeWrapper>
@@ -146,9 +134,12 @@ const RightSection = styled.section`
 
 const DemoWrapper = styled.div`
   height: 9rem;
-  display: grid;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 const CodeContainer = styled.div`
   margin-top: 2rem;

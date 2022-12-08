@@ -45,7 +45,7 @@ const SkeletonContainer = styled.div`
       ? `&::before {
     content: '';
     position: absolute;
-    background: #fff;
+    background: rgb(255, 255, 255, 0.1);
     top: 0;
     bottom: 0;
     left: 0;
@@ -55,7 +55,7 @@ const SkeletonContainer = styled.div`
   &::after {
     content: '';
     position: absolute;
-    background: #dee2e6;
+    background: rgb(108, 108, 108, 0.7);
     top: 0;
     bottom: 0;
     left: 0;
@@ -66,13 +66,13 @@ const SkeletonContainer = styled.div`
       : ''}
   @keyframes fade {
     0% {
-      opacity: 0.4;
+      opacity: 0.1;
     }
     50% {
       opacity: 1;
     }
     100% {
-      opacity: 0.4;
+      opacity: 0.1;
     }
   }
 `;

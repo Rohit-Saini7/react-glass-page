@@ -25,8 +25,8 @@ export const componentList = [
       },
       {
         propName: 'icon',
-        propsType: 'src value',
-        propsExample: 'icon="./assets/icon.svg"',
+        propsType: 'boolene',
+        propsExample: 'icon',
       },
       {
         propName: 'onClose',
@@ -44,20 +44,19 @@ export const componentList = [
         propsExample: 'withCloseButton',
       },
     ],
-    demoComponent: ``,
-    codeSnippit: `
-<Alert
-    title='This is a title.'
-    variant='filled'
-    color='rgba(222, 21, 21, 0.5)'
-    fontColor='rgba(66, 18, 18, 0.5)'
-    icon='./assets/icon.svg'
-    onClose={() => {
-      console.log('Closed')
-    }}
-    radius={10}
-    withCloseButton
-  />`,
+    codeSnippit: `<Alert
+  title='This is title.'
+  variant='filled'
+  color='rgba(199, 31, 31, 0.3)'
+  icon
+  onClose={() => {
+    console.log('Closed');
+  }}
+  radius={10}
+  withCloseButton
+>
+  This is sub-title.
+</Alert>`,
   },
   {
     name: 'Avatar',
@@ -94,17 +93,7 @@ export const componentList = [
         propsExample: 'src="./Image1.jpeg"',
       },
     ],
-    demoComponent: `
-<Avatar
-  alt='alt text'
-  altColor='rgba(255, 255, 40, 0.7)'
-  color='rgba(255, 255, 40, 0.2)'
-  radius={5}
-  size={50}
-/>    
-`,
-    codeSnippit: `
-<Avatar
+    codeSnippit: `<Avatar
   alt='alt text'
   altColor='rgba(255, 255, 40, 0.7)'
   color='rgba(255, 255, 40, 0.2)'
@@ -153,26 +142,14 @@ export const componentList = [
         propsExample: 'rightSection=`<img src="./a.png" alt="" />`',
       },
     ],
-    demoComponent: `
-<Badge
-  color='rgba(255, 255, 25, .7)'
+    codeSnippit: `<Badge
+  color='rgba(255, 255, 25, 0.3)'
   fontColor='rgba(0, 17, 17, 1)'
   fullWidth
   radius={20}
   size={24}
 >
-  badge
-</Badge>    
-`,
-    codeSnippit: `
-<Badge
-  color='rgba(255, 255, 25, .7)'
-  fontColor='rgba(0, 17, 17, 1)'
-  fullWidth
-  radius={20}
-  size={24}
->
-  badge
+  A Badge
 </Badge>
 `,
   },
@@ -201,15 +178,7 @@ export const componentList = [
         propsExample: 'transitionTime={500}',
       },
     ],
-    demoComponent: `
-<Burger 
-  size={24} 
-  spacing={4} 
-  transitionTime={400} 
-  opened
-/>`,
-    codeSnippit: `
-<Burger 
+    codeSnippit: `<Burger 
   size={24} 
   spacing={4} 
   transitionTime={400} 
@@ -257,26 +226,14 @@ export const componentList = [
         propsExample: 'onClose={() => console.log("closed")}',
       },
     ],
-    demoComponent: `
-<Notification
+    codeSnippit: `<Notification
   onClose={() => console.log('closed')}
   color='rgba(255, 255, 255, 0.2)'
   title='This is title.'
   radius={10}
   loading
 >
-  This is sub title
-</Notification>    
-`,
-    codeSnippit: `
-<Notification
-  onClose={() => console.log('closed')}
-  color='rgba(255, 255, 255, 0.2)'
-  title='This is title.'
-  radius={10}
-  loading
->
-  This is sub title
+  This is sub title.
 </Notification>    
 `,
   },
@@ -311,19 +268,9 @@ export const componentList = [
         propsExample: 'zIndex={6}',
       },
     ],
-    demoComponent: `
-<Overlay
+    codeSnippit: `<Overlay
   blur={1}
-  color='rgba(255, 255, 255, 0.7)'
-  opacity={0.5}
-  radius={6}
-  zIndex={10}
-/>    
-`,
-    codeSnippit: `
-<Overlay
-  blur={1}
-  color='rgba(255, 255, 255, 0.7)'
+  color='rgba(234, 78, 78, 0.7)'
   opacity={0.5}
   radius={6}
   zIndex={10}
@@ -380,32 +327,15 @@ export const componentList = [
         propsExample: 'sections=[{ value: 40, color: "cyan"}]',
       },
     ],
-    demoComponent: `
-<Progress
-  barColor='rgba(0, 0, 0, 0.7)'
-  color='rgba(255, 255, 255, 0.7)'
-  label='this a lable'
-  radius={10}
-  sections
+    codeSnippit: `<Progress
+  barColor='rgba(79, 208, 74, 0.3)'
+  color='rgba(228, 136, 109, 0.5)'
+  radius={7}
   size={20}
   value={70}
   striped
   animate
-/>
-`,
-    codeSnippit: `
-<Progress
-  barColor='rgba(0, 0, 0, 0.7)'
-  color='rgba(255, 255, 255, 0.7)'
-  label='this a lable'
-  radius={10}
-  sections
-  size={20}
-  value={70}
-  striped
-  animate
-/>    
-`,
+/>`,
   },
   {
     name: 'Ring Progress',
@@ -438,20 +368,7 @@ export const componentList = [
         propsExample: 'thickness={13}',
       },
     ],
-    demoComponent: `
-<RingProgress
-  label='It goes in middle.'
-  sections={[
-    { value: 40, color: 'cyan' },
-    { value: 15, color: 'orange' },
-    { value: 15, color: 'yellow' },
-  ]}
-  size={150}
-  thickness={10}
-  roundCaps
-/>`,
-    codeSnippit: `
-<RingProgress
+    codeSnippit: `<RingProgress
   label='It goes in middle.'
   sections={[
     { value: 40, color: 'cyan' },
@@ -498,23 +415,12 @@ export const componentList = [
         propsExample: 'radius={4}',
       },
     ],
-    demoComponent: `
-     <Skeleton
-  height={100}
-  width={100}
-  radius={4}
+    codeSnippit: `<Skeleton
+  height={10}
+  width={300}
+  radius={5}
   animate
   visible
-  circle
-/>`,
-    codeSnippit: `
- <Skeleton
-  height={100}
-  width={100}
-  radius={4}
-  animate
-  visible
-  circle
 />`,
   },
 ];

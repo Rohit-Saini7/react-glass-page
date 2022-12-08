@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Alert = ({
-  title,
+  title = '',
   variant = 'light',
   children,
-  color,
-  fontColor,
-  icon,
+  color = 'rgba(199, 31, 31, 0.7)',
+  fontColor = 'inherit',
+  icon = false,
   onClose,
   radius = 4,
   withCloseButton = false,
@@ -22,9 +22,15 @@ export const Alert = ({
       role='alert'
       {...others}
     >
-      {icon && (
+      {!!icon && (
         <Icon>
-          <img src={icon} alt='' />
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 512 512'
+            fill='currentColor'
+          >
+            <path d='M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z' />
+          </svg>
         </Icon>
       )}
       <Body>
@@ -53,25 +59,23 @@ const AlertWrapper = styled.div`
   padding-left: ${({ icon, loading }) =>
     !!icon || !!loading ? '10px' : '16px'};
   border-radius: ${({ radius }) => radius}px;
-  border: 1px solid
+  border: 2px solid
     ${({ color, variant }) => (variant === 'outline' ? color : 'transparent')};
   display: flex;
   background-color: ${({ color, variant }) =>
-    variant === 'filled' ? color : 'rgba(231, 245, 255, 1)'};
-  color: ${({ fontColor }) => fontColor};
+    variant === 'filled' ? color : 'rgba(231, 245, 255, .1)'};
 `;
 
 const Icon = styled.div`
   box-sizing: border-box;
   line-height: 1;
-  width: 20px;
-  height: 20px;
+  width: 1rem;
+  height: 1rem;
   display: flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
-  margin: 1px;
+  margin-right: 1rem;
 `;
 
 const Body = styled.div`
@@ -90,7 +94,6 @@ const Heading = styled.div`
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #212529;
 `;
 
 const Description = styled.div`
