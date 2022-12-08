@@ -20,8 +20,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow: hidden;
   font-family: 'Nunito', sans-serif;
+  @media (min-width: 701px) {
+    overflow: hidden;
+  }
 }
 
 .dark {
@@ -56,4 +58,15 @@ body {
   --signin-color: #5ae09e;
   --table-header-color: rgba(90, 224, 158, 0.7);
   --table-body-color: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
 }

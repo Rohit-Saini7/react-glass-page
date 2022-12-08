@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Titlebar from '../components/Titlebar';
@@ -18,12 +18,15 @@ export async function loader({ request }) {
 }
 
 const Home = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <React.Fragment>
-      <Titlebar />
+      <Titlebar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <Container>
-        <Navbar />
-        <Outlet />
+        <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        <InnerContainer isNavOpen={isNavOpen}>
+          <Outlet />
+        </InnerContainer>
       </Container>
     </React.Fragment>
   );
@@ -38,7 +41,15 @@ const Container = styled.div`
   max-width: 1350px;
   height: 100%;
   max-height: 70vh;
-  display: grid;
-  grid-template-columns: minmax(300px, 400px) auto;
   gap: 3rem;
+  @media (min-width: 701px) {
+    display: grid;
+    grid-template-columns: minmax(250px, 250px) auto;
+  }
+`;
+
+const InnerContainer = styled.div`
+  @media (max-width: 700px) {
+    ${({ isNavOpen }) => (!isNavOpen ? 'display:block' : 'display: none;')}
+  }
 `;

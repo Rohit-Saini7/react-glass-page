@@ -3,6 +3,18 @@ import { useLoaderData } from 'react-router-dom';
 import styled from 'styled-components';
 import { componentList } from '../assets/componentList';
 
+import {
+  Alert,
+  Avatar,
+  Badge,
+  Burger,
+  Notification,
+  Overlay,
+  Progress,
+  RingProgress,
+  Skeleton,
+} from './../react-glassmorphism';
+
 export async function loader({ params }) {
   const component = componentList.find(
     (comp) => comp.name === params.component
@@ -24,32 +36,30 @@ const Showcase = () => {
       <LeftSection>
         <ComponentName>{name}</ComponentName>
         <ComponentDescription>{description}</ComponentDescription>
-        <PropsWrapper cellPadding='0' cellSpacing='0' border='0'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.map(({ propName, propsType, propDescription }) => (
-              <tr>
-                <td>{propName}</td>
-                <td>{propsType}</td>
-                <td>{propDescription}</td>
-              </tr>
-            ))}
-          </tbody>
+        <PropsWrapper>
+          <div className='headRow'>
+            <div className='item'>Name</div>
+            <div className='item'>Type</div>
+            <div className='item'>Example</div>
+          </div>
+          {props.map(({ propName, propsType, propsExample }, index) => (
+            <div className='bodyRow' key={index}>
+              <div className='item'>{propName}</div>
+              <div className='item'>{propsType}</div>
+              <div className='item'>{propsExample}</div>
+            </div>
+          ))}
         </PropsWrapper>
       </LeftSection>
       <RightSection>
-        <DemoWrapper
-          dangerouslySetInnerHTML={{ __html: demoComponent }}
+        <DemoWrapper /* dangerouslySetInnerHTML={{ __html: demoComponent }} */
         ></DemoWrapper>
-        <CodeWrapper>
-          <Code>{codeSnippit}</Code>
-        </CodeWrapper>
+        <CodeContainer>
+          Code:
+          <CodeWrapper>
+            <Code>{codeSnippit}</Code>
+          </CodeWrapper>
+        </CodeContainer>
       </RightSection>
     </Container>
   );
@@ -59,7 +69,7 @@ export default Showcase;
 
 const Container = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 100%;
   background: var(--container-bg-color);
   border-radius: 10px;
   border: 1px solid var(--container-bg-color);
@@ -69,13 +79,23 @@ const Container = styled.div`
   box-shadow: var(--shadow);
   position: relative;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+
+  @media (max-width: 700px) {
+  }
+  @media (min-width: 701px) {
+    max-height: 70vh;
+    grid-template-columns: 4fr 3fr;
+  }
 `;
 
 const LeftSection = styled.section`
   height: 100%;
   padding: 2rem;
   border-right: 1px solid var(--border-bottom-color);
+
+  @media (max-width: 700px) {
+    padding: 2rem 0.5rem;
+  }
 `;
 
 const ComponentName = styled.h1`
@@ -87,37 +107,59 @@ const ComponentName = styled.h1`
 const ComponentDescription = styled.p`
   text-indent: 3rem;
   text-align: justify;
-  margin: 1rem 0;
-  height: 7rem;
+  margin: 1rem 0 2rem;
+  height: max-content;
 `;
 
-const PropsWrapper = styled.table`
+const PropsWrapper = styled.div`
   width: 100%;
-  & > thead {
+  overflow-x: scroll;
+  & > .headRow,
+  & > .bodyRow {
     text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    grid-template-columns: 1fr 1fr 2fr;
   }
-  & > thead > tr > th {
-    border-bottom: 1px solid var(--border-bottom-color);
+  & > .headRow > .item:nth-of-type(even),
+  & > .bodyRow > .item:nth-of-type(even) {
+    text-align: center;
   }
-  & > tbody > tr > td {
-    border-bottom: 1px solid var(--border-bottom-color);
+  & > .bodyRow {
+    background: transparent;
   }
-  & > tbody > tr:last-of-type > td {
-    border-bottom: 1px solid transparent;
+  & > .bodyRow:nth-of-type(odd) {
+    background: rgba(0, 0, 0, 0.1);
   }
 `;
 
 const RightSection = styled.section`
   height: 100%;
   padding: 2rem;
+  @media (max-width: 700px) {
+    padding: 2rem 0.5rem;
+  }
 `;
 
 const DemoWrapper = styled.div`
-  height: 11.5rem;
+  height: 9rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+`;
+const CodeContainer = styled.div`
+  margin-top: 2rem;
+  overflow: scroll;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const CodeWrapper = styled.pre`
-  margin-top: 1rem;
+  font-size: 1.1rem;
 `;
 
 const Code = styled.code``;

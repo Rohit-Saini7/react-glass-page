@@ -10,14 +10,14 @@ export function loader({ request }) {
   return { components };
 }
 
-const Navbar = () => {
+const Navbar = ({ isNavOpen, setIsNavOpen }) => {
   const { components, q } = useLoaderData();
   const submit = useSubmit();
   useEffect(() => {
     document.getElementById('q').value = q;
   }, [q]);
   return (
-    <Container>
+    <Container isNavOpen={isNavOpen}>
       <Form id='search-form' role='search'>
         <SearchBar
           id='q'
@@ -37,20 +37,23 @@ const Navbar = () => {
         <div id='search-spinner' aria-hidden hidden={true} />
         <div className='sr-only' aria-live='polite'></div>
       </Form>
-      <List>
-        {components.map((component) => (
-          <ListItem key={component.name}>
-            <NavLink
-              to={component.name}
-              className={({ isActive, isPending }) =>
-                isActive ? 'active' : isPending ? 'pending' : ''
-              }
-            >
-              {component.name}
-            </NavLink>
-          </ListItem>
-        ))}
-      </List>
+      <ListWrapper>
+        <List>
+          {components.map((component) => (
+            <ListItem key={component.name}>
+              <NavLink
+                to={component.name}
+                className={({ isActive, isPending }) =>
+                  isActive ? 'active' : isPending ? 'pending' : ''
+                }
+                onClick={() => setIsNavOpen((o) => !o)}
+              >
+                {component.name}
+              </NavLink>
+            </ListItem>
+          ))}
+        </List>
+      </ListWrapper>
     </Container>
   );
 };
@@ -83,6 +86,11 @@ const Container = styled.nav`
     height: 3rem;
     margin: 0 0 2rem;
   }
+  @media (max-width: 700px) {
+    position: absolute;
+    max-width: 100%;
+    ${({ isNavOpen }) => (!!isNavOpen ? 'display:block' : 'display: none;')}
+  }
 `;
 
 const SearchBar = styled.input`
@@ -97,6 +105,11 @@ const SearchBar = styled.input`
   outline: none;
 `;
 
+const ListWrapper = styled.div`
+  border-radius: 10px;
+  margin-bottom: 2rem;
+`;
+
 const List = styled.ul`
   width: 100%;
   list-style: none;
@@ -104,9 +117,7 @@ const List = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
-  margin-bottom: 3rem;
-  border-radius: 10px;
+  overflow-x: hidden;
 `;
 
 const ListItem = styled.li`

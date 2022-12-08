@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Index = () => {
   return (
     <Container id='zero-state'>
-      <p>
+      <div>
         <h2>This is a demo for React Glass.</h2>
         <br />
         Check out{' '}
@@ -11,7 +11,7 @@ const Index = () => {
           for source code of all components
         </a>
         .
-      </p>
+      </div>
       <p>Made with React and styled-components by Palak and Rohit.</p>
     </Container>
   );
