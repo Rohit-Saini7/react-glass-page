@@ -1,1 +1,1 @@
-# react-glass-demo
+# react-glass-comps

@@ -66,7 +66,6 @@ const Container = styled.nav`
   width: 100%;
   max-width: 400px;
   height: 100%;
-  max-height: 70vh;
   background: var(--container-bg-color);
   border-radius: 10px;
   border: 1px solid var(--container-bg-color);

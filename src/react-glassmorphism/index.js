@@ -1,9 +1,0 @@
-export { Alert } from './Alert';
-export { Avatar } from './Avatar';
-export { Badge } from './Badge';
-export { Burger } from './Burger';
-export { Notification } from './Notification';
-export { Overlay } from './Overlay';
-export { Progress } from './Progress';
-export { RingProgress } from './RingProgress';
-export { Skeleton } from './Skeleton';

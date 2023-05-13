@@ -186,6 +186,271 @@ export const componentList = [
 />`,
   },
   {
+    name: 'Button',
+    description: 'A custom Button.',
+    props: [
+      {
+        propName: 'bgColor',
+        propsType: 'rgba',
+        propsExample: "bgColor = 'transparent'",
+      },
+      {
+        propName: 'label',
+        propsType: 'text',
+        propsExample: "label = 'Button'",
+      },
+      {
+        propName: 'mainColor',
+        propsType: 'rgba',
+        propsExample: "mainColor = 'rgba(255,255, 255 ,0.7)'",
+      },
+      {
+        propName: 'size',
+        propsType: '{key:string}',
+        propsExample: "size = { height: '44px', width: '102px' }",
+      },
+      {
+        propName: 'textProps',
+        propsType: '{key:string}',
+        propsExample:
+          "textProps = { lineHeight: '42px', fontSize: '17px', color: '#fff' }",
+      },
+      {
+        propName: 'border',
+        propsType: '{key:string}',
+        propsExample:
+          "border = { size: '2px', type: 'solid', radius: '6px', color: 'rgba(255, 255, 255, 0.7)' }",
+      },
+      {
+        propName: 'hoverTextColor',
+        propsType: 'rgba',
+        propsExample: "hoverTextColor = 'rgba(0 ,0, 0)'",
+      },
+    ],
+    codeSnippit: `<Btn
+  bgColor='transparent'
+  mainColor='rgba(255,255, 255 ,0.7)'
+  size={height:'44px', width:'102px'}
+  textProps={lineHeight: '42px',
+    fontSize: '17px',
+    color: '#fff'}
+  border={size: '2px',
+    type: 'solid',
+    radius: '6px',
+    color: 'rgba(255,255, 255 ,0.7)'}
+  hoverTextColor={rgba(0, 0, 0, 1)}
+>
+  Button
+</Btn>`,
+  },
+  {
+    name: 'CheckBox',
+    description: 'A custom Checkbox.',
+    props: [
+      {
+        propName: 'size',
+        propsType: 'number',
+        propsExample: 'size={40}',
+      },
+      {
+        propName: 'strokeWidth',
+        propsType: 'number',
+        propsExample: 'strokeWidth={4}',
+      },
+      {
+        propName: 'strokeColor',
+        propsType: 'rgba',
+        propsExample: "strokeColor='rgb(50, 205, 50, 1)'",
+      },
+      {
+        propName: 'radio',
+        propsType: 'boolean',
+        propsExample: 'radio={true}',
+      },
+    ],
+    codeSnippit: `<Checkbox
+  size={40}
+  strokeWidth={4}
+  strokeColor='limegreen'
+  radio
+/>`,
+  },
+  {
+    name: 'Dropdown',
+    description: 'A custom Dropdown.',
+    props: [
+      {
+        propName: 'Multiple',
+        propsType: 'boolean',
+        propsExample: 'Multiple',
+      },
+      {
+        propName: 'Searchable',
+        propsType: 'boolean',
+        propsExample: 'Searchable',
+      },
+      {
+        propName: 'dropdownBorder',
+        propsType: 'rgba',
+        propsExample: "dropdownBorder='rgba(33, 33, 33,1)'",
+      },
+      {
+        propName: 'fontColor',
+        propsType: 'rgba',
+        propsExample: "fontColor='rgba(255, 255, 255,1)'",
+      },
+      {
+        propName: 'hoverColor',
+        propsType: 'rgba',
+        propsExample: "hoverColor='rgba(159, 195, 248, 0.439)'",
+      },
+      {
+        propName: 'menuBgColor',
+        propsType: 'rgba',
+        propsExample: "menuBgColor='rgba(0, 0, 0, 0)'",
+      },
+      {
+        propName: 'menuBorder',
+        propsType: 'border css',
+        propsExample: "menuBorder='1px solid #ccc'",
+      },
+      {
+        propName: 'menuZindex',
+        propsType: 'number',
+        propsExample: 'menuZindex={4}',
+      },
+      {
+        propName: 'onChange',
+        propsType: 'function',
+        propsExample: 'onChange={(v)=>console.log(v)}',
+      },
+      {
+        propName: 'options',
+        propsType: 'array of objects',
+        propsExample: "options={[{ value: 'a', label: 's' }]}",
+      },
+      {
+        propName: 'placeHolder',
+        propsType: 'string',
+        propsExample: "placeHolder='Select...'",
+      },
+      {
+        propName: 'searchBorder',
+        propsType: 'border css',
+        propsExample: "searchBorder='1px solid #ccc'",
+      },
+      {
+        propName: 'selectedColor',
+        propsType: 'rgba',
+        propsExample: "selectedColor='rgba(0 ,0, 0, 0.1)'",
+      },
+      {
+        propName: 'tagBgColor',
+        propsType: 'rgba',
+        propsExample: "tagBgColor='rgba(255, 255 ,255 ,0.1)'",
+      },
+    ],
+    codeSnippit: `<Dropdown
+  Multiple
+  Searchable
+  dropdownBorder='1px solid #ccc'
+  fontColor='rgba(255, 255, 255,1)'
+  hoverColor='#9fc3f870'
+  menuBgColor='transparent'
+  menuBorder='1px solid #ccc'
+  menuZindex={4}
+  onChange={(v)=>console.log(v)}
+  options={[{ value: 'a', label: 's' }]}
+  placeHolder='Select...'
+  searchBorder='1px solid #ccc'
+  selectedColor='rgba(0 ,0, 0, 0.1)'
+  tagBgColor='rgba(255, 255 ,255 ,0.1)'
+/>`,
+  },
+  {
+    name: 'Input',
+    description: 'A Custom Input field.',
+    props: [
+      {
+        propName: 'errorBgColor',
+        propsType: 'rgba',
+        propsExample: "errorBgColor='rgba(0, 0, 0, 0)'",
+      },
+      {
+        propName: 'errorColor',
+        propsType: 'rgba',
+        propsExample: "errorColor='rgba(237, 11, 11, 1)'",
+      },
+      {
+        propName: 'errorMessage',
+        propsType: 'string',
+        propsExample: "errorMessage='The Email is invalid'",
+      },
+      {
+        propName: 'fontColor',
+        propsType: 'rgba',
+        propsExample: "fontColor='rgba(255, 255, 255, 1)'",
+      },
+      {
+        propName: '',
+        propsType: '',
+        propsExample: '',
+      },
+      {
+        propName: 'inputBorder',
+        propsType: 'border css',
+        propsExample: "inputBorder='1px solid #fff'",
+      },
+      {
+        propName: 'inputFieldBg',
+        propsType: 'rgba',
+        propsExample: "inputFieldBg='rgba(0, 0, 0, 0)'",
+      },
+      {
+        propName: 'inputRef',
+        propsType: 'ref',
+        propsExample: 'inputRef={InputRef}',
+      },
+      {
+        propName: 'labelColor',
+        propsType: 'rgba',
+        propsExample: "labelColor='rgba(255, 255, 255, 1)'",
+      },
+      {
+        propName: 'labelFontSize',
+        propsType: 'number',
+        propsExample: 'labelFontSize={2}',
+      },
+      {
+        propName: 'placeholder',
+        propsType: 'string',
+        propsExample: "placeholder='Enter Email...'",
+      },
+      {
+        propName: 'placeholderColor',
+        propsType: 'rgba',
+        propsExample: "placeholderColor='rgba(170, 170, 170, 1)'",
+      },
+      {
+        propName: 'type',
+        propsType: 'string',
+        propsExample: "type='email'",
+      },
+    ],
+    codeSnippit: `<Input
+  errorBgColor='transparent'
+  errorColor='#ed0b0bff'
+  errorMessage='The Email is invalid'
+  fontColor='rgba(255, 255, 255, 1)'
+  inputBorder='1px solid #fff'
+  inputFieldBg='rgba(0, 0, 0, 0)'
+  labelColor='rgba(255, 255, 255, 1)'
+  labelFontSize={2}
+  placeholder='Enter Email...'
+  type='email'
+/>`,
+  },
+  {
     name: 'Notification',
     description:
       'Show dynamic notifications and alerts to user, part of notifications system.',
@@ -423,20 +688,42 @@ export const componentList = [
   visible
 />`,
   },
+  {
+    name: 'SwitchBox',
+    description: 'A Custom Switchbox.',
+    props: [
+      {
+        propName: 'circleColor',
+        propsType: 'rgba',
+        propsExample: "circleColor='rgba(0, 0, 0, 0)'",
+      },
+      {
+        propName: 'circleSize',
+        propsType: 'number',
+        propsExample: 'circleSize={2}',
+      },
+      {
+        propName: 'sliderColor',
+        propsType: 'rgba',
+        propsExample: "sliderColor='rgba(0, 0, 0, 0)'",
+      },
+      {
+        propName: 'sliderHeight',
+        propsType: 'number',
+        propsExample: 'sliderHeight={1}',
+      },
+      {
+        propName: 'sliderWidth',
+        propsType: 'number',
+        propsExample: 'sliderWidth={1}',
+      },
+    ],
+    codeSnippit: `<SwitchBox
+  circleColor='rgba(0, 0, 0, 0)'
+  circleSize={2}
+  sliderColor='rgba(0, 0, 0, 0)'
+  sliderHeight={1}
+  sliderWidth={1}
+/>`,
+  },
 ];
-
-// Button, Checkbox, Input Field,Radio Field,
-
-// {
-//   name: '',
-//   description: '',
-//   props: [
-//     {
-//       propName: '',
-//       propsType: '',
-//       propsExample: '',
-//     },
-//   ],
-//   demoComponent: ``,
-//   codeSnippit: ``,
-// },

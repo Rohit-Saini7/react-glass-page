@@ -71,7 +71,6 @@ const Container = styled.div`
   @media (max-width: 700px) {
   }
   @media (min-width: 701px) {
-    max-height: 70vh;
     grid-template-columns: 4fr 3fr;
   }
 `;

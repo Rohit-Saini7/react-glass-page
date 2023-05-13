@@ -40,11 +40,11 @@ const Container = styled.div`
   width: 100%;
   max-width: 1350px;
   height: 100%;
-  max-height: 70vh;
   gap: 3rem;
   @media (min-width: 701px) {
     display: grid;
     grid-template-columns: minmax(250px, 250px) auto;
+    margin-bottom: 3rem;
   }
 `;
 
