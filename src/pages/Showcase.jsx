@@ -139,6 +139,9 @@ const DemoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  & > label {
+    margin: 0;
+  }
 `;
 const CodeContainer = styled.div`
   margin-top: 2rem;

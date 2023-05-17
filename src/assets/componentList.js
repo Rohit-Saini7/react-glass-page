@@ -292,7 +292,7 @@ export const componentList = [
       {
         propName: 'dropdownBorder',
         propsType: 'rgba',
-        propsExample: "dropdownBorder='rgba(33, 33, 33,1)'",
+        propsExample: "'rgba(33, 33, 33,1)'",
       },
       {
         propName: 'fontColor',
@@ -302,12 +302,12 @@ export const componentList = [
       {
         propName: 'hoverColor',
         propsType: 'rgba',
-        propsExample: "hoverColor='rgba(159, 195, 248, 0.439)'",
+        propsExample: "hoverColor= 'rgba(159, 195, 248, 0.439)'",
       },
       {
         propName: 'menuBgColor',
         propsType: 'rgba',
-        propsExample: "menuBgColor='rgba(0, 0, 0, 0)'",
+        propsExample: "menuBgColor= 'rgba(0, 0, 0, 0)'",
       },
       {
         propName: 'menuBorder',
@@ -332,7 +332,7 @@ export const componentList = [
       {
         propName: 'placeHolder',
         propsType: 'string',
-        propsExample: "placeHolder='Select...'",
+        propsExample: "placeHolder= 'Select...'",
       },
       {
         propName: 'searchBorder',
@@ -342,29 +342,29 @@ export const componentList = [
       {
         propName: 'selectedColor',
         propsType: 'rgba',
-        propsExample: "selectedColor='rgba(0 ,0, 0, 0.1)'",
+        propsExample: "selectedColor= 'rgba(0 ,0, 0, 0.1)'",
       },
       {
         propName: 'tagBgColor',
         propsType: 'rgba',
-        propsExample: "tagBgColor='rgba(255, 255 ,255 ,0.1)'",
+        propsExample: "tagBgColor= 'rgba(255, 255 ,255 ,0.1)'",
       },
     ],
     codeSnippit: `<Dropdown
   Multiple
   Searchable
   dropdownBorder='1px solid #ccc'
-  fontColor='rgba(255, 255, 255,1)'
+  fontColor='rgba(255,255,255,1)'
   hoverColor='#9fc3f870'
   menuBgColor='transparent'
   menuBorder='1px solid #ccc'
   menuZindex={4}
   onChange={(v)=>console.log(v)}
-  options={[{ value: 'a', label: 's' }]}
+  options={[{ value:'a', label:'s'}]}
   placeHolder='Select...'
   searchBorder='1px solid #ccc'
   selectedColor='rgba(0 ,0, 0, 0.1)'
-  tagBgColor='rgba(255, 255 ,255 ,0.1)'
+  tagBgColor='rgba(255,255,255,0.1)'
 />`,
   },
   {
@@ -374,37 +374,32 @@ export const componentList = [
       {
         propName: 'errorBgColor',
         propsType: 'rgba',
-        propsExample: "errorBgColor='rgba(0, 0, 0, 0)'",
+        propsExample: "errorBgColor= 'rgba(0, 0, 0, 0)'",
       },
       {
         propName: 'errorColor',
         propsType: 'rgba',
-        propsExample: "errorColor='rgba(237, 11, 11, 1)'",
+        propsExample: "errorColor= 'rgba(237, 11, 11, 1)'",
       },
       {
         propName: 'errorMessage',
         propsType: 'string',
-        propsExample: "errorMessage='The Email is invalid'",
+        propsExample: "errorMessage= 'The Email is invalid'",
       },
       {
         propName: 'fontColor',
         propsType: 'rgba',
-        propsExample: "fontColor='rgba(255, 255, 255, 1)'",
-      },
-      {
-        propName: '',
-        propsType: '',
-        propsExample: '',
+        propsExample: "fontColor= 'rgba(255, 255, 255, 1)'",
       },
       {
         propName: 'inputBorder',
         propsType: 'border css',
-        propsExample: "inputBorder='1px solid #fff'",
+        propsExample: "inputBorder= '1px solid #fff'",
       },
       {
         propName: 'inputFieldBg',
         propsType: 'rgba',
-        propsExample: "inputFieldBg='rgba(0, 0, 0, 0)'",
+        propsExample: "inputFieldBg= 'rgba(0, 0, 0, 0)'",
       },
       {
         propName: 'inputRef',
@@ -414,7 +409,7 @@ export const componentList = [
       {
         propName: 'labelColor',
         propsType: 'rgba',
-        propsExample: "labelColor='rgba(255, 255, 255, 1)'",
+        propsExample: "labelColor= 'rgba(255, 255, 255, 1)'",
       },
       {
         propName: 'labelFontSize',
@@ -424,12 +419,12 @@ export const componentList = [
       {
         propName: 'placeholder',
         propsType: 'string',
-        propsExample: "placeholder='Enter Email...'",
+        propsExample: "placeholder= 'Enter Email...'",
       },
       {
         propName: 'placeholderColor',
         propsType: 'rgba',
-        propsExample: "placeholderColor='rgba(170, 170, 170, 1)'",
+        propsExample: "placeholderColor= 'rgba(170, 170, 170, 1)'",
       },
       {
         propName: 'type',
@@ -492,7 +487,7 @@ export const componentList = [
       },
     ],
     codeSnippit: `<Notification
-  onClose={() => console.log('closed')}
+  onClose={() =>console.log('closed')}
   color='rgba(255, 255, 255, 0.2)'
   title='This is title.'
   radius={10}
@@ -695,7 +690,7 @@ export const componentList = [
       {
         propName: 'circleColor',
         propsType: 'rgba',
-        propsExample: "circleColor='rgba(0, 0, 0, 0)'",
+        propsExample: "circleColor='rgba( 0,0,0,0)'",
       },
       {
         propName: 'circleSize',
@@ -705,7 +700,7 @@ export const componentList = [
       {
         propName: 'sliderColor',
         propsType: 'rgba',
-        propsExample: "sliderColor='rgba(0, 0, 0, 0)'",
+        propsExample: "sliderColor='rgba( 0,0,0,0)'",
       },
       {
         propName: 'sliderHeight',

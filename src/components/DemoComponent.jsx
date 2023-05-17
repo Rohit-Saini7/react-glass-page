@@ -49,7 +49,9 @@ export const GetDemoComponent = (name) => {
       return (
         <React.Fragment>
           <Overlay />
-          This is under Overlay. Try selecting me.
+          <span style={{ userSelect: 'none' }}>
+            This is under Overlay. Try selecting me.
+          </span>
         </React.Fragment>
       );
     case 'Progress':
